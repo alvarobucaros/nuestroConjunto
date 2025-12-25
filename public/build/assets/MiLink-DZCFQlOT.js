@@ -1,0 +1,1 @@
+import{j as r,U as a}from"./app-Cegcm5kP.js";function n({Href:e,Label:t}){return r.jsx(a,{href:e,className:"bg-teal-100 hover:bg-teal-500 p-4 flex space-x-4 text-gray-700 font-small rounded-lg w-32 mx-auto justify-center",children:t})}export{n as M};

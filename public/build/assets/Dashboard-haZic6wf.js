@@ -1,0 +1,1 @@
+import{V as s,r as n,j as t}from"./app-Cegcm5kP.js";import{G as e}from"./GuestLayout-Bd2wOEE9.js";function j(r){s().props.auth.user;const[o,u]=n.useState(r.conjunto);return t.jsx(e,{conjunto:o,children:t.jsx("h3",{children:o.con_nombre})})}export{j as default};
