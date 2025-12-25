@@ -1,11 +1,4 @@
-Material componentes
-https://www.material-tailwind.com/docs/react/installation
-
-Para seguir
-https://medium.com/@laravelprotips/creating-a-react-js-laravel-api-crud-a-simple-guide-02702f93d26f
-
-estudiar
-https://www.twilio.com/en-us/blog/laravel-breeze-vs-laravel-jetstream
+mio guia para interactuar con git
 
 
 git add .
@@ -17,10 +10,4 @@ Si estás trabajando con más personas, no olvides realizar git pull origin main
 Crear subdominio en cpanel.
 https://www.youtube.com/watch?v=kogHNQ7pRLg
 
-base de datos appeinte_multiblog
 
-usuario appeinte_Cien1000	
-
-password	appeinteCien1000
-
-tsohlacol~egnimota_etnieppa~0001neiC_etnieppa~0001neiCetnieppa~1
