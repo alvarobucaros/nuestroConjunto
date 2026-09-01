@@ -1,0 +1,29 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+
+    body { margin: 0; font-family: sans-serif; background: #feecd0 }
+
+    header { background: #dca278; color: rgb(61, 77, 54); padding: 1em; 
+        text-align: center; font-weight: bolder; font-size: 1.3em; }
+    
+    .container { display: flex; height: calc(100vh - 120px); }
+        
+    nav { width: 200px; background: #a2bba3; padding: 1em; }
+    nav a { display: block; margin-bottom: 10px; text-decoration: none; color: #FFF; } 
+    nav ul {list-style: none;padding: 0;}
+
+    nav ul li {margin-bottom: 10px; cursor: pointer;}
+
+    nav ul li ul {display: none;margin-left: 15px;}
+
+    nav ul li.active > ul {display: block;}
+
+    nav a {text-decoration: none;color: #333;}
+
+    main { flex: 1; padding: 2em; overflow-y: auto; }
+
+    h2 {color:coral}
+
+    footer { background: #e4b594; color: rgb(61, 77, 54); 
+        padding: 1em; text-align: center; flex:auto }
