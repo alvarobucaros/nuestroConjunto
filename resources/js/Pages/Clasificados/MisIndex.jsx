@@ -182,13 +182,12 @@ export default function clasificados(props, filters) {
                                 <td className='border border-gray-400 px-2 py-1'>{clasificado.cla_telefonos}</td>     
                                 <td className='border border-gray-400 px-2 py-1'>{clasificado.cla_email}  </td>      
                                 <td className='border border-gray-400 px-2 py-1'>{clasificado.cla_fchPublicacion}  </td>
-                               <td
-  className={`border border-gray-400 px-2 py-1 ${
-    hoy > clasificado.cla_fchHasta ? 'text-red-500 font-semibold' : ''
-  }`}
->
-  {clasificado.cla_fchHasta}
-</td>                    
+                                <td className={`border border-gray-400 px-2 py-1 ${
+                                        hoy > clasificado.cla_fchHasta ? 'text-red-500 font-semibold' : ''
+                                    }`}
+                                    >
+                                    {clasificado.cla_fchHasta}
+                                    </td>                    
                                 <td className='border border-gray-400 px-2 py-1'>
                                 {clasificado.cla_grafica ? (
                                    

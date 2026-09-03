@@ -8,16 +8,7 @@ import MiCard from '@/Components/MiCard';
 export default function Dashboard(props) {
     const user = usePage().props.auth.user;
     const [conjunto, setConjunto] = useState(props.conjunto);
-    // const openModal = () =>{
-    //     setModal(true);
-    // }
 
-    // const closeModal = () =>{
-    //     setModal(false);
-    // }
-
-   // const [imagen, setImagen] = useState(['../images/postcolor.png', '../images/postcolor.png', '../images/postcolorActual.png']);
- 
     return (
         <GuestLayout conjunto={conjunto} 
  

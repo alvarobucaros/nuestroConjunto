@@ -23,7 +23,7 @@ export default function ComunicadoCard({ comunicado }) {
             //  style={{ width: '60px', height: '60px' }}
           />
         ) : (
-          <div className="w-full h-full bg-gray-100 flex items-center justify-center text-gray-500">
+          <div className="w-full h-full bg-gray-100 flex items-center justify-center text-red-500">
             Sin imagen
           </div>
         )}
@@ -51,11 +51,11 @@ export default function ComunicadoCard({ comunicado }) {
           >Ver doc. en PDF
           </a>
         ) : (
-          <p className="text-gray-500 mb-2">Sin anexo</p>
+          <p className="text-red-500 mb-2">Sin anexo</p>
         )}
         <p className="text-sm text-gray-500">
           🗓 Publicado: {new Date(comunicado.com_fechaPublicacion).toLocaleDateString()}
-          <strong className="mx-4 text-sm text-gray-500 font-semibold"> {tipoEstado}</strong>
+          <strong className="mx-4 text-sm text-gray-800 font-semibold"> {tipoEstado}</strong>
         </p>
       </div>
     </div>

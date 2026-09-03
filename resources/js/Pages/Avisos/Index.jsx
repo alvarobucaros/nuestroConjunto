@@ -85,7 +85,7 @@ export default function avisos(props, filters) {
         setOperation(op);
         if(op === 1){
             setTitle('Adicionar un aviso');
-            setData({          
+            setData({  'id':0,        
                 'avi_titulo':'',  
                 'avi_subtitulo':'',  
                 'avi_detalle':'',  

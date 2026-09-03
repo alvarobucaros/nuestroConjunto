@@ -10,6 +10,7 @@ export default function MiMenu(conjunto) {
     return (
         // <AuthenticatedLayoutDoc conjunto={conjunto}>
         <>
+        <Head title="Welcomesss" />
               <div className="flex items-center space-x-2 mx-6">
                 <div className='grid grid-cols-9 gap-2'>
                     <MiLink Href="/comunicados" Label="Comunicados"></MiLink>

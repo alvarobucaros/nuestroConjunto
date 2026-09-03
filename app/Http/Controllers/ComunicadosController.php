@@ -25,12 +25,37 @@ class ComunicadosController extends Controller
                     ->orderBy('com_fechaPublicacion')
                     ->paginate(10)
                     ->withQueryString();
-//dd($comunicados);
         return Inertia::render('Comunicados/Index', ['conjunto' => $conjunto, 
         'comunicados'=>$comunicados, 'filters' => [
             'search' => $search,
         ], ]);
     }
+
+    // Página para ver los comunicados sin estar logueado
+    public function indexVer(Request $request)
+    {
+
+        $search = $request->input('search');
+
+        $conjunto = Conjunto::first(); 
+
+        $comunicados = Comunicado::where('com_estado', 'A') // condición principal
+            ->where(function ($query) use ($search) {
+                $query->where('com_titulo', 'like', "%{$search}%")
+                    ->orWhere('com_detalle', 'like', "%{$search}%");
+            })
+            ->orderBy('com_tipo')
+            ->orderBy('com_fechaPublicacion')
+            ->paginate(10)
+            ->withQueryString();
+
+
+        return Inertia::render('Comunicados/ComunicadosVer', ['conjunto' => $conjunto, 
+        'comunicados'=>$comunicados, 'filters' => [
+            'search' => $search,
+        ], ]);
+    }
+
 
     /** 
      * Show the form for creating a new resource.
@@ -66,9 +91,8 @@ class ComunicadosController extends Controller
             // Mueve el archivo a public/logo
             $file->move(public_path('anexos'), $anexoname);
         }        
-//dd($request->id);
+
         if($request->id == '0'){
- //           dd('crea');
             Comunicado::create([
                 'com_tipo' => $request->com_tipo,          
                 'com_titulo' => $request->com_titulo,
@@ -80,12 +104,17 @@ class ComunicadosController extends Controller
             ]);
         }
         else{
-   
+
             $comunicado = Comunicado::find($request->id);
+            if ($filename !== null) {
+                $comunicado->com_grafica  = $filename; // 2. Asignas la clave y el valor
+            }else{
+                $comunicado->com_grafica  = $comunicado->com_grafica; 
+            }
             $comunicado->com_tipo = $request->com_tipo;            
             $comunicado->com_titulo = $request->com_titulo;
             $comunicado->com_detalle = $request->com_detalle;
-            $comunicado->com_grafica = $filename;
+           // $comunicado->com_grafica = $filename;
             $comunicado->com_anexo = $anexoname;
             $comunicado->com_fechaPublicacion = $request->com_fechaPublicacion;
             $comunicado->com_estado = $request->com_estado;

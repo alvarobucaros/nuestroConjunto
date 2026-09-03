@@ -10,4 +10,9 @@ Si estás trabajando con más personas, no olvides realizar git pull origin main
 Crear subdominio en cpanel.
 https://www.youtube.com/watch?v=kogHNQ7pRLg
 
+Limpiar despues de muchos cambios
 
+php artisan route:clear
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear

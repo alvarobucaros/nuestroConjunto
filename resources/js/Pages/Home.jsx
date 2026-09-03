@@ -1,6 +1,6 @@
 import { useState, React } from 'react';
 import MenuLayout from '@/Layouts/MenuLayout';
-import { Link} from '@inertiajs/react';
+import {Head,  Link} from '@inertiajs/react';
 import MiLink from '@/Components/MiLink';
  
 import MiTarjeta from '@/Components/MiTarjeta';
@@ -15,19 +15,23 @@ import CardHorizontal from '@/Components/CardHorizontal';
   return (
     <MenuLayout conjunto={conjunto}  id='menu'>
     <div>
-
+    <Head title="Propiedad Horizontal" />
     <nav className="bg-teal-100 h-5 flex space-x-6 text-gray-700 font-small rounded-lg  justify-center ">
-      {/* Menú Comunicados con subniveles */}
+      {/* Menú Comunicados con sub niveles */}
       <div className="relative group">
 
        </div>
 
       <div className="bg-teal-100  hover:bg-teal-500 flex space-x-6 text-gray-700 font-small rounded-md w-36 mx-auto justify-center" >
-        <Link href="#comunicados" >Comunicados</Link>  
+        <Link href="#avisos" >Anuncios Generales</Link>  
       </div>
 
       <div className="bg-teal-100  hover:bg-teal-500 flex space-x-6 text-gray-700 font-small rounded-md w-36 mx-auto justify-center" >
-        <Link href="#clasificados" >Avisos Clasificados</Link>  
+        <Link href="/comunicadosVer" >Comunicados</Link>  
+      </div>
+
+      <div className="bg-teal-100  hover:bg-teal-500 flex space-x-6 text-gray-700 font-small rounded-md w-36 mx-auto justify-center" >
+        <Link href="/clasificadosVer" >Avisos Clasificados</Link>  
       </div>
       <div className="bg-teal-100  hover:bg-teal-500 flex space-x-6 text-gray-700 font-small rounded-md w-36 mx-auto justify-center" >
         <Link href="/clasificados" >Publicar un Aviso</Link>  
@@ -49,7 +53,7 @@ import CardHorizontal from '@/Components/CardHorizontal';
       <div className="bg-teal-100  hover:bg-teal-500 flex space-x-6 text-gray-700 font-small rounded-md w-36 mx-auto justify-center" >
           <Link href="/contactos" >Contáctenos</Link>  
       </div>         
-    </nav>
+    </nav> 
 
 
         <main className="p-6 space-y-8">
@@ -66,7 +70,7 @@ import CardHorizontal from '@/Components/CardHorizontal';
                 </div>
               </div> 
           </section>
-
+{/* 
           <section id='comunicados'>
  
               <div className="flex flex-row items-center gap-4">
@@ -79,9 +83,9 @@ import CardHorizontal from '@/Components/CardHorizontal';
                    <ComunicadoCard key={comunicado.id} comunicado={comunicado} />
                 ))}
               </div>
-          </section>
+          </section> */}
 
-          <section id='clasificados'>  
+          {/* <section id='clasificados'>  
               <div className="flex flex-row items-center gap-4">
                 <h2 className="text-xl font-bold text-blue-800">🧱 AVISOS CLASIFICADOS</h2>
                 <span className="font-bold text-blue-600">Últimos avisos clasificados publicados por la comunidad.</span>
@@ -98,7 +102,7 @@ import CardHorizontal from '@/Components/CardHorizontal';
                 ))}
                   </div>
               </div> 
-          </section>
+          </section> */}
         </main>
     </div>
     </MenuLayout>

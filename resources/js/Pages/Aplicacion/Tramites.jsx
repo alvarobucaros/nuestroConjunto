@@ -100,7 +100,7 @@ export default function Tramites(props, conjunto, op) {
         <AuthenticatedLayout auth={props.auth} conjunto={props.conjunto}
         >
         <div className="mb-6 text-center">
-            <Head title="Trámites" />
+            <Head title="Trámites  - Propiedad Horizontal" />
             <span className='text-blue-600 font-bold text-lg px-4 py-1 mx-4'> {tramiteOptions[props.op] || 'Desconocido'} </span> 
         </div>
          <div className=' flex justify-center'>

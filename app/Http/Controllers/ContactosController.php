@@ -21,16 +21,16 @@ class ContactosController extends Controller
         $this->mailService = $mailService;
     }
     /**
-     * Display a listing of the  resource.
+     * Display a listing of the  resource. 
      */
     public function index()
     {
         $conjunto = Conjunto::first(); 
-
         return Inertia::render('Contactos/Index', ['conjunto' => $conjunto]);
    
     }
-        public function misIndex()
+
+    public function misIndex()
     {
         $conjunto = Conjunto::first(); 
         $contactos = Contactos::where('con_estado', '!=' ,'T')
@@ -38,7 +38,6 @@ class ContactosController extends Controller
         ->orderBy('con_fechaRecibo')
         ->paginate(12);
         return Inertia::render('Contactos/MisIndex', ['conjunto' => $conjunto, 'contactos' => $contactos ]);
-   
     }
 
     /**

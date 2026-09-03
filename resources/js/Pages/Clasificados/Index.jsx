@@ -101,9 +101,8 @@ export default function Tramites(props, conjunto, op) {
   return (
       <AuthenticatedLayout auth={props.auth} conjunto={props.conjunto}
       >
-        <div className="mb-6 text-center">
-            <Head title="Clasificados" />         
-        </div>
+        <Head title="Clasificados - Propiedad Horizontal" />
+  
         <div>
             <div className=' flex justify-center'>
                 <Card className="w-full max-w-4xl "> 

@@ -64,18 +64,21 @@ class AvisosController extends Controller
 
         }
 
-        if($request->id === 0){
-            
+        if($request->id == 0){      
+         
             Avisos::create([
                 'avi_titulo' => $request->avi_titulo,
                 'avi_subtitulo' => $request->avi_subtitulo,
                 'avi_detalle' => $request->avi_detalle,
                 'avi_grafica' =>  $filename,         
-                'avi_fchpublica' => date('Y-m-d'),
+                'avi_fchpublica' => date('Y-m-d'), 
                 'avi_estado' => 'I'
             ]);
-        }
+           
+
+        }   
         else{
+            dd($filename.' - '.$request->id);
             $avisos = Avisos::find($request->id);
             $avisos->avi_titulo = $request->avi_titulo;
             $avisos->avi_subtitulo = $request->avi_subtitulo;

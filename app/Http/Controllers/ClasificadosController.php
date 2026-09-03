@@ -23,7 +23,8 @@ class ClasificadosController extends Controller
     /**
      * Display a listing of the resource.
      */
-        public function index(Request $request)
+
+    public function index(Request $request)
     {
         $search = $request->input('search');
 
@@ -35,6 +36,23 @@ class ClasificadosController extends Controller
                     ->withQueryString();
 
         return Inertia::render('Clasificados/Index', ['conjunto' => $conjunto, 
+        'clasificados'=>$clasificados, 'filters' => [
+            'search' => $search,
+        ], ]);
+    }
+
+        
+    public function indexVer(Request $request)
+    {
+        $search = $request->input('search');
+
+        $conjunto = Conjunto::first(); 
+
+        $clasificados = Clasificado::where('cla_estado', 'A')                    
+                    ->orderBy('cla_fchHasta')
+                    ->paginate(10)
+                    ->withQueryString();
+        return Inertia::render('Clasificados/ClasificadosVer', ['conjunto' => $conjunto, 
         'clasificados'=>$clasificados, 'filters' => [
             'search' => $search,
         ], ]);

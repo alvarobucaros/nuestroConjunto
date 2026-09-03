@@ -46,6 +46,7 @@ Route::delete('/tramites/{id}', [TramiteController::class, 'destroy'])->name('tr
 
 Route::get('/misclasificados', [ClasificadosController::class, 'misclasificados'])->middleware(['auth', 'verified'])->name('misclasificados');
 Route::get('/clasificados', [ClasificadosController::class, 'index'])->name('clasificados');
+Route::get('/clasificadosVer', [ClasificadosController::class, 'indexVer'])->name('clasificadosVer');
 Route::get('/clasificados/{id}', [ClasificadosController::class, 'show'])->name('clasificados.show');
 Route::post('/clasificados', [ClasificadosController::class, 'store'])->name('clasificados.store');
 Route::put('/clasificados/{id}', [ClasificadosController::class, 'update'])->name('clasificados.update');
@@ -60,11 +61,12 @@ Route::delete('/contactos/{id}', [ContactosController::class, 'destroy'])->name(
 
 Route::get('/comunicados', [ComunicadosController::class, 'index'])->middleware(['auth', 'verified'])->name('comunicados');
 Route::get('/comunicados/{id}', [ComunicadosController::class, 'show'])->name('comunicados.show');
+Route::get('/comunicadosVer', [ComunicadosController::class, 'indexVer'])->name('comunicadosVer');
 Route::post('/comunicados', [ComunicadosController::class, 'store'])->name('comunicados.store');
 Route::put('/comunicados/{id}', [ComunicadosController::class, 'update'])->name('comunicados.update');
 Route::delete('/comunicados/{id}', [ComunicadosController::class, 'destroy'])->name('comunicados.destroy');
 
-// esto es nuevo
+// esto es nuevo 
 Route::post('/publicaciones', [AppController::class, 'store'])->name('publicaciones.store');
 Route::get('/publicaciones/crear', [AppController::class, 'create'])->name('publicaciones.create');
 Route::get('/publicaciones', [PublicacionesController::class, 'index'])->name('publicaciones');
